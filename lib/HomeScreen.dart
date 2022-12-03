@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'Header.dart';
 
 import 'AppBar.dart';
+import 'Preview.dart';
 
 class HomeScreen extends StatefulWidget {
   // const HomeScreen({Key key}) : super(key: key);
@@ -36,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;
     return Scaffold(
-      extendBodyBehindAppBar: true,
+      // extendBodyBehindAppBar: true,
       // floatingActionButton: FloatingActionButton(
       //   backgroundColor: Colors.grey[850],
       //   child: const Icon(Icons.cast),
@@ -47,10 +48,25 @@ class _HomeScreenState extends State<HomeScreen> {
         child: CustomAppBar(),
       ),
       body: SingleChildScrollView(
-        child: Column(children: [
+        
+
+        child: Column
+   
+        
+        (
+          
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+       
           
           Header(),
-          Header(),
+          Preview(),
+          
+       
+         
+          
+          
+          
 
         
 

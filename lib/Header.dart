@@ -6,9 +6,10 @@ class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
+      alignment: Alignment.center,
       children: [
         Padding(
-          padding: const EdgeInsets.only(left: 8),
+          padding: const EdgeInsets.only(left: 0),
           child: Container(
             height: 500,
             child:  Image.asset(
@@ -21,7 +22,7 @@ class Header extends StatelessWidget {
         ),
  
         Padding(
-          padding: const EdgeInsets.only(left: 8),
+          padding: const EdgeInsets.only(left: 0),
           child: Container(
             height: 500,
             decoration: BoxDecoration(
@@ -34,6 +35,21 @@ class Header extends StatelessWidget {
                 ),
            
             ),
+// NAME OF THE MODEL /SINTEL
+            SizedBox(
+              width: 250,
+            ),
+            Positioned(left: 0, right: 0, bottom: 40,
+            child:  Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                IconButton(onPressed: (() {}), icon: Icon(Icons.add )),
+                IconButton(onPressed: (() {}), icon: Icon(Icons.add)),
+                IconButton(onPressed: (() {}), icon: Icon(Icons.add))
+
+
+              ],
+            ))
         
       ],
     );
