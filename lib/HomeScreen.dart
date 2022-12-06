@@ -1,9 +1,13 @@
+import 'package:fans/Popular.dart';
 import 'package:flutter/material.dart';
 
 import 'Header.dart';
 
 import 'AppBar.dart';
+import 'Originals.dart';
 import 'Preview.dart';
+import 'Top.dart';
+import 'Trending.dart';
 
 class HomeScreen extends StatefulWidget {
   // const HomeScreen({Key key}) : super(key: key);
@@ -61,6 +65,10 @@ class _HomeScreenState extends State<HomeScreen> {
           
           Header(),
           Preview(),
+          Top(),
+          Popular(),
+          Trending(),
+          Originals(),
           
        
          
@@ -115,3 +123,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   }
 }
+
+
+
+

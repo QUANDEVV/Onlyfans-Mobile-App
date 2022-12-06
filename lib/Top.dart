@@ -7,12 +7,10 @@ import 'categorycard.dart';
 import 'selectedcategorypage.dart';
 import 'model.dart';
 
+class Top extends StatelessWidget {
 
 
-class Preview extends StatelessWidget {
-
-
-  List<Nudes> names = Names.getMockedCategories();
+List<Nudes> names = Names.getMockedCategories();
 
 
   @override
@@ -23,7 +21,7 @@ class Preview extends StatelessWidget {
          Padding(
            padding: const EdgeInsets.symmetric(horizontal: 24),
            child: Text(
-                      'Previews',
+                      'Top',
                       style: GoogleFonts.poppins(
                          
                           fontSize: 19,
