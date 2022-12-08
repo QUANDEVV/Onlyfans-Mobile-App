@@ -29,7 +29,8 @@ class Preview extends StatelessWidget {
                           fontSize: 19,
                           fontWeight: FontWeight.w600,
                           fontStyle: FontStyle.normal,
-                          color: Colors.white),
+                          color: Color.fromARGB(255, 215, 212, 212)),
+                        
                     ),
          ),
          Container(
@@ -40,6 +41,8 @@ class Preview extends StatelessWidget {
                   itemBuilder: (BuildContext ctx, int index) {
                     return CategoryCard(
                       category: names[index],
+                      
+                    
                       onCardClick: () {
                         Navigator.push(
                             context,

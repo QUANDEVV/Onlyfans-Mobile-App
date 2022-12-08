@@ -1,13 +1,13 @@
-import 'package:fans/Popular.dart';
+import 'package:fans/Popular/Popular.dart';
 import 'package:flutter/material.dart';
 
-import 'Header.dart';
+import '../Header/Header.dart';
 
-import 'AppBar.dart';
-import 'Originals.dart';
-import 'Preview.dart';
-import 'Top.dart';
-import 'Trending.dart';
+import '../AppBar/AppBar.dart';
+import '../Originals/Originals.dart';
+import '../Preview/Preview.dart';
+import '../Top/Top.dart';
+import '../Trending/Trending.dart';
 
 class HomeScreen extends StatefulWidget {
   // const HomeScreen({Key key}) : super(key: key);

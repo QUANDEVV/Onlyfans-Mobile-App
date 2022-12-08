@@ -3,14 +3,16 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'categorycard.dart';
+import 'TopCard.dart';
 import 'selectedcategorypage.dart';
 import 'model.dart';
+
+
 
 class Popular extends StatelessWidget {
 
 
-List<Nudes> names = Names.getMockedCategories();
+  List<Nudes> names = Names.getMockedCategories();
 
 
   @override
@@ -27,7 +29,8 @@ List<Nudes> names = Names.getMockedCategories();
                           fontSize: 19,
                           fontWeight: FontWeight.w600,
                           fontStyle: FontStyle.normal,
-                          color: Colors.white),
+                          color: Color.fromARGB(255, 215, 212, 212)),
+                         
                     ),
          ),
          Container(
@@ -38,6 +41,8 @@ List<Nudes> names = Names.getMockedCategories();
                   itemBuilder: (BuildContext ctx, int index) {
                     return CategoryCard(
                       category: names[index],
+                      
+                    
                       onCardClick: () {
                         Navigator.push(
                             context,
