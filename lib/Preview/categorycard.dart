@@ -70,7 +70,7 @@ class CategoryCard extends StatelessWidget {
                ),
 
                Positioned(
-                left: 35,
+                left: 38,
                 right: 0,
                 bottom: 0,
                 top: 100,

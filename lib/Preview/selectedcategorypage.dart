@@ -1,4 +1,7 @@
+
 // ignore_for_file: must_be_immutable, deprecated_member_use, unused_element, unused_import
+
+// import 'dart:html';
 
 import 'package:url_launcher/link.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -13,25 +16,18 @@ import 'model.dart';
 
 // import 'category.dart';
 
-
-
-
-
 class SelectedCategoryPage extends StatelessWidget {
   Nudes? selectedCategory;
 
-  SelectedCategoryPage({this.selectedCategory});
+  SelectedCategoryPage({this.selectedCategory, required this.url});
 
-final Uri _url = Uri.parse('https://flutter.dev');
+  Uri url;
 
   Future<void> _launchUrl() async {
-  if (!await launchUrl(_url)) {
-    throw 'Could not launch $_url+';
+    if (!await launchUrl(url)) {
+      throw 'Could not launch $url';
+    }
   }
-}
-
-  
-
 
   @override
   Widget build(BuildContext context) {
@@ -53,18 +49,24 @@ final Uri _url = Uri.parse('https://flutter.dev');
               floating: true,
               pinned: true,
               // Display a placeholder widget to visualize the shrinking size.
-              flexibleSpace: FlexibleSpaceBar(
-                background: Image.asset(
-                  'assets/' +
-                      this.selectedCategory!.imgName!.toString() +
-                      '.jpg',
-                  fit: BoxFit.cover,
-                  height: 700,
-                ),
-              ),
+              // flexibleSpace: FlexibleSpaceBar(
+              //   background: Padding(
+              //     padding: const EdgeInsets.only(top: 30),
+              //     child: Image.asset(
+              //       'assets/' +
+              //           this.selectedCategory!.imgName!.toString() +
+              //           '.jpg',
+              //       fit: BoxFit.cover,
+              
+              //     ),
+              //   ),
+              // ),
               // Make the initial height of the SliverAppBar larger than normal.
-              expandedHeight: 300,
+              // expandedHeight: 300,
             ),
+
+
+        
 
             SliverToBoxAdapter(
               child: SizedBox(
@@ -123,18 +125,15 @@ final Uri _url = Uri.parse('https://flutter.dev');
                           fontStyle: FontStyle.normal,
                           color: Colors.white),
                     ),
-
-                    GestureDetector(
-
-        
- 
-   
-              onTap: _launchUrl,
-              child: Text(this.selectedCategory!.url.toString(),
-              style: TextStyle(color: Colors.blue, decoration: TextDecoration.underline),
-              ),
-            ),
-                  
+                    // GestureDetector(
+                    //   onTap: _launchUrl,
+                    //   child: Text(
+                    //     this.selectedCategory!.url.toString(),
+                    //     style: TextStyle(
+                    //         color: Colors.blue,
+                    //         decoration: TextDecoration.underline),
+                    //   ),
+                    // ),
                   ]),
                 ),
               ),
@@ -155,13 +154,10 @@ final Uri _url = Uri.parse('https://flutter.dev');
                           fontStyle: FontStyle.normal,
                           color: Colors.white),
                     ),
-
-      
                   ]),
                 ),
               ),
             ),
-          
 
             // Next, create a SliverList
             SliverGrid(
@@ -219,168 +215,5 @@ final Uri _url = Uri.parse('https://flutter.dev');
 
 
 
-// // ignore_for_file: must_be_immutable
 
-// import 'package:flutter/material.dart';
-// import 'package:google_fonts/google_fonts.dart';
 
-// import 'category.dart';
-
-// class SelectedCategoryPage extends StatelessWidget {
-//   Category? selectedCategory;
-
-//   SelectedCategoryPage({this.selectedCategory});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       // floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-//       // floatingActionButton: FloatingActionButton.extended(
-//       //   onPressed: () {},
-
-//       //   label: Text(
-//       //     'Unlock \$2',
-//       //     style: GoogleFonts.poppins(
-//       //         textStyle: Theme.of(context).textTheme.headline4,
-//       //         fontSize: 22,
-//       //         fontWeight: FontWeight.w600,
-//       //         fontStyle: FontStyle.normal,
-//       //         color: Colors.black),
-//       //   ),
-//       //   // elevation: 0,
-//       //   backgroundColor: Colors.white,
-//       // ),
-//       appBar: AppBar(
-//         foregroundColor: Colors.white,
-//         backgroundColor: Colors.transparent,
-//         elevation: 0,
-//       ),
-//       body: SafeArea(
-//           child: SingleChildScrollView(
-//         scrollDirection: Axis.vertical,
-//         child: Container(
-//           child: Column(
-//             mainAxisSize: MainAxisSize.max,
-//             children: [
-//               Container(
-//                 height: 360,
-//                 width: double.infinity,
-//                 child: Image.asset(
-//                   'assets/' +
-//                       this.selectedCategory!.imgName!.toString() +
-//                       '.jpg',
-//                   fit: BoxFit.cover,
-//                 ),
-//               ),
-//               SizedBox(
-//                 child: Padding(
-//                   padding: const EdgeInsets.only(
-//                       left: 24, right: 24, top: 20, bottom: 10),
-//                   child: Column(children: [
-//                     Row(
-//                       crossAxisAlignment: CrossAxisAlignment.start,
-//                       children: [
-//                         Text(
-//                           'OnlyFans : 🔒',
-//                           style: GoogleFonts.poppins(
-//                               textStyle: Theme.of(context).textTheme.headline4,
-//                               fontSize: 15,
-//                               fontWeight: FontWeight.w300,
-//                               fontStyle: FontStyle.normal,
-//                               color: Colors.white),
-//                         ),
-//                       ],
-//                     ),
-//                   ]),
-//                 ),
-//               ),
-//               SizedBox(
-//                 child: Padding(
-//                   padding: const EdgeInsets.only(
-//                       left: 24, right: 24, top: 4, bottom: 10),
-//                   child: Column(children: [
-//                     Row(
-//                       crossAxisAlignment: CrossAxisAlignment.start,
-//                       children: [
-//                         Text(
-//                           'Instagram : 🔒',
-//                           style: GoogleFonts.poppins(
-//                               textStyle: Theme.of(context).textTheme.headline4,
-//                               fontSize: 15,
-//                               fontWeight: FontWeight.w300,
-//                               fontStyle: FontStyle.normal,
-//                               color: Colors.white),
-//                         ),
-//                       ],
-//                     ),
-//                   ]),
-//                 ),
-//               ),
-//               SizedBox(
-//                 child: Padding(
-//                   padding: const EdgeInsets.only(
-//                       left: 24, right: 24, top: 4, bottom: 10),
-//                   child: Column(children: [
-//                     Row(
-//                       crossAxisAlignment: CrossAxisAlignment.start,
-//                       children: [
-//                         Text(
-//                           'Model Name: 🔒',
-//                           style: GoogleFonts.poppins(
-//                               textStyle: Theme.of(context).textTheme.headline4,
-//                               fontSize: 15,
-//                               fontWeight: FontWeight.w300,
-//                               fontStyle: FontStyle.normal,
-//                               color: Colors.white),
-//                         ),
-//                       ],
-//                     ),
-//                   ]),
-//                 ),
-//               ),
-//               SizedBox(
-//                 child: Padding(
-//                   padding: const EdgeInsets.only(
-//                       left: 24, right: 24, top: 4, bottom: 10),
-//                   child: Column(children: [
-//                     Row(
-//                       crossAxisAlignment: CrossAxisAlignment.start,
-//                       children: [
-//                         Text(
-//                           'Countrys : 🔒',
-//                           style: GoogleFonts.poppins(
-//                               textStyle: Theme.of(context).textTheme.headline4,
-//                               fontSize: 15,
-//                               fontWeight: FontWeight.w300,
-//                               fontStyle: FontStyle.normal,
-//                               color: Colors.white),
-//                         ),
-//                       ],
-//                     ),
-//                   ]),
-//                 ),
-//               ),
-             
-//               // CustomScrollView(
-//               //   slivers: [
-//               //     SliverGrid.count(crossAxisCount: 3),
-//               //     // children: [],
-//               //     SliverList(delegate: SliverChildBuilderDelegate(
-                    
-//               //       ((context, index) => Container(
-
-                     
-                     
-//               //       ))
-                    
-//               //       ))
-//               //   ],
-//               // )
-
-//             ],
-//           ),
-//         ),
-//       )),
-//     );
-//   }
-// }
