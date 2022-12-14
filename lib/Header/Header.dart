@@ -87,7 +87,7 @@ class _HeaderState extends State<Header> with TickerProviderStateMixin {
             width: 250,
           ),
           Positioned(
-              left: 0,
+              left: 0.0,
               right: 0,
               bottom: 40,
               child: Row(
